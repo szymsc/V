@@ -798,7 +798,7 @@ h1 {
 .emoji {
   position: absolute;
   font-size: 2rem;
-  animation: fall 3.5s linear infinite;
+  animation: fall 3.5s linear 4;
 }
 
 @keyframes fall {
