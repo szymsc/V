@@ -1,0 +1,813 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #db729a;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+h1 {
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,Bemio;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.red-text {
+  color: red;
+}
+
+.container {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 100px;
+    margin-bottom: 400px;
+}
+
+.buttons {
+    display: flex;
+    gap: 150px;
+    margin-bottom: 100px;
+}
+
+.button-yes {
+    background-color: rgb(223, 44, 112);
+    border-radius: 100px;
+    box-shadow: rgba(231, 15, 98, 0.2) 0 -25px 18px -14px inset,rgba(231, 15, 98, 0.15) 0 1px 2px,rgba(231, 15, 98, 0.15) 0 2px 4px,rgba(231, 15, 98, 0.15) 0 4px 8px,rgba(231, 15, 98, 0.15) 0 8px 16px,rgba(231, 15, 98, 0.15) 0 16px 32px;
+    color: wheat;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 15px;
+    font-style: bold;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-yes:hover {
+    box-shadow: rgba(231, 15, 98, 0.35) 0 -25px 18px -14px inset,rgba(231, 15, 98, 0.35) 0 1px 2px,rgba(231, 15, 98, 0.35) 0 2px 4px,rgba(231, 15, 98, 0.35) 0 4px 8px,rgba(231, 15, 98, 0.35) 0 8px 16px,rgba(231, 15, 98, 0.35) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.button-no {
+    background-color: #2e0524;
+    border-radius: 100px;
+    box-shadow: rgba(44,187,99,.2) 0 -25px 18px -14px inset,rgba(231, 15, 98, 0.15) 0 1px 2px,rgba(231, 15, 98, 0.15) 0 2px 4px,rgba(231, 15, 98, 0.15) 0 4px 8px,rgba(231, 15, 98, 0.15) 0 8px 16px,rgba(231, 15, 98, 0.15) 0 16px 32px;
+    color: wheat;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 15px;
+    font-style: bold;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-no:hover {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(231, 15, 98, 0.35) 0 1px 2px,rgba(231, 15, 98, 0.35) 0 2px 4px,rgba(231, 15, 98, 0.35) 0 4px 8px,rgba(231, 15, 98, 0.35) 0 8px 16px,rgba(231, 15, 98, 0.35) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.container div {
+    position: absolute;
+
+}
+.container .rose-petals > div {
+    background: #d52d58;
+    width: 45px;
+    height: 80px;
+    position: absolute;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.container .rose-petals > div:nth-child(1) {
+    border-radius: 15px;
+    left: 20px;
+    top: -6px;
+    background: #d52d58;
+}
+.container .rose-petals > div:nth-child(2), .container .rose-petals > div:nth-child(4), .container .rose-petals > div:nth-child(6) {
+    border-radius: 0px 30px 0px 30px;
+    background: #b81b43;
+    left: 0;
+    transform-origin: bottom right;
+}
+.container .rose-petals > div:nth-child(3), .container .rose-petals > div:nth-child(5), .container .rose-petals > div:nth-child(7) {
+    border-radius: 30px 0px 30px 0px;
+    left: 40px;
+    transform-origin: bottom left;
+}
+.container .rose-petals > div:nth-child(2) {
+    z-index: 5;
+    background: #9e183a;
+    top: 10px;
+    height: 70px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(3) {
+    z-index: 4;
+    background: #9e183a;
+    top: 10px;
+    height: 70px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(4) {
+    z-index: 3;
+    background: #b81b43;
+    top: 5px;
+    height: 75px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(5) {
+    z-index: 2;
+    background: #b81b43;
+    top: 5px;
+    height: 75px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(6) {
+    z-index: 1;
+    background: #c9204b;
+    top: "";
+    height: "";
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(7) {
+    z-index: 0;
+    background: #c9204b;
+    top: "";
+    height: "";
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.container .rose-leaves > div:nth-last-child(1) {
+    width: 55px;
+    height: 15px;
+    background: #338f37;
+    position: absolute;
+    top: 72px;
+    left: 15px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+}
+.container .rose-leaves > div:nth-child(1) {
+    width: 6px;
+    height: 230px;
+    border: none;
+    top: 80px;
+    background: #066406;
+    left: 40px;
+}
+.container .thorns > div {
+    width: 30px;
+    height: 30px;
+    background: #066406;
+    top: 100px;
+    left: 10px;
+}
+.container .thorns > div:after {
+    width: 41px;
+    height: 31px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background: #db729a;
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 17px;
+}
+.container .thorns > div:before {
+    width: 41px;
+    height: 31px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background: #db729a;
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: -11px;
+    z-index: 0;
+}
+.container .thorns > div:nth-child(2) {
+    top: 150px;
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 45px;
+}
+.container .thorns > div:nth-child(3) {
+    top: 180px;
+}
+.container .thorns > div:nth-child(4) {
+    top: 220px;
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 45px;
+}
+.container .sparkles {
+    bottom: -300px;
+}
+.container .sparkles > div {
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background: #ff96c0;
+    box-shadow: 0px 0px 12px 2px #ff4e85;
+    bottom: 0;
+    opacity: 0;
+    -moz-animation: sparkle 4s ease-in-out infinite;
+    -webkit-animation: sparkle 4s ease-in-out infinite;
+    animation: sparkle 4s ease-in-out infinite;
+}
+.container .sparkles > div:nth-child(1) {
+    left: 250px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.container .sparkles > div:nth-child(2) {
+    left: 158px;
+    -moz-animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+.container .sparkles > div:nth-child(3) {
+    left: -22px;
+    -moz-animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+.container .sparkles > div:nth-child(4) {
+    left: 10px;
+    -moz-animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+.container .sparkles > div:nth-child(5) {
+    left: 340px;
+    -moz-animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(6) {
+    left: -82px;
+    -moz-animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+.container .sparkles > div:nth-child(7) {
+    left: 120px;
+    -moz-animation-delay: 4.5s;
+    -webkit-animation-delay: 4.5s;
+    animation-delay: 4.5s;
+}
+.container .sparkles > div:nth-child(8) {
+    left: 94px;
+    -moz-animation-delay: 6s;
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+}
+.container .sparkles > div:nth-child(9) {
+    left: 79px;
+    -moz-animation-delay: 3.5s;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+}
+.container .sparkles > div:nth-child(10) {
+    left: -188px;
+    -moz-animation-delay: 2.3s;
+    -webkit-animation-delay: 2.3s;
+    animation-delay: 2.3s;
+}
+.container .sparkles > div:nth-child(11) {
+    left: 300px;
+    -moz-animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+}
+.container .sparkles > div:nth-child(12) {
+    left: 200px;
+    -moz-animation-delay: 2.7s;
+    -webkit-animation-delay: 2.7s;
+    animation-delay: 2.7s;
+}
+.container .sparkles > div:nth-child(13) {
+    left: -28px;
+    -moz-animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+}
+.container .sparkles > div:nth-child(14) {
+    left: -260px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+@keyframes animationName {
+    50% {
+      opacity: 10;
+    }
+    100% {
+      bottom: 550px;
+    }
+}
+@-moz-keyframes sparkle {
+    50% {
+      opacity: 10;
+    }
+    100% {
+      bottom: 550px;
+    }
+}
+@-ms-keyframes sparkle {
+    50% {
+      opacity: 10;
+    }
+    100% {
+      bottom: 550px;
+    }
+}
+@keyframes sparkle {
+    50% {
+      opacity: 10;
+    }
+    100% {
+      bottom: 550px;
+    }
+}
+
+@keyframes animationName {
+    50% {
+      box-shadow: 0px 0px 60px #f594b8;
+    }
+}
+@-moz-keyframes glowing {
+    50% {
+      box-shadow: 0px 0px 60px #f594b8;
+    }
+}
+@-ms-keyframes glowing {
+    50% {
+      box-shadow: 0px 0px 60px #f594b8;
+    }
+}
+@keyframes glowing {
+    50% {
+      box-shadow: 0px 0px 60px #f594b8;
+    }
+}
+
+/*YES OPEN*/
+.rose-petals.open > div:nth-child(1) {
+    -moz-animation: openRose1 3s ease-in-out;
+    -webkit-animation: openRose1 3s ease-in-out;
+    animation: openRose1 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.rose-petals.open > div:nth-child(2) {
+    -moz-animation: openRose2 3s ease-in-out;
+    -webkit-animation: openRose2 3s ease-in-out;
+    animation: openRose2 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.rose-petals.open > div:nth-child(3) {
+    -moz-animation: openRose3 3s ease-in-out;
+    -webkit-animation: openRose3 3s ease-in-out;
+    animation: openRose3 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.rose-petals.open > div:nth-child(4) {
+    -moz-animation: openRose4 3s ease-in-out;
+    -webkit-animation: openRose4 3s ease-in-out;
+    animation: openRose4 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.rose-petals.open > div:nth-child(5) {
+    -moz-animation: openRose5 3s ease-in-out;
+    -webkit-animation: openRose5 3s ease-in-out;
+    animation: openRose5 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.rose-petals.open > div:nth-child(6) {
+    -moz-animation: openRose6 3s ease-in-out;
+    -webkit-animation: openRose6 3s ease-in-out;
+    animation: openRose6 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.rose-petals.open > div:nth-child(7) {
+    -moz-animation: openRose7 3s ease-in-out;
+    -webkit-animation: openRose7 3s ease-in-out;
+    animation: openRose7 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animationName {
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    top: 210px;
+    left: -30px;
+  }
+}
+@-moz-keyframes openRose2 {
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    top: 210px;
+    left: -30px;
+  }
+}
+@-ms-keyframes openRose2 {
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    top: 210px;
+    left: -30px;
+  }
+}
+@keyframes openRose2 {
+  100% {
+      -moz-transform: rotate(-40deg);
+      -ms-transform: rotate(-40deg);
+      -webkit-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+    }
+}
+@-webkit-keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@-moz-keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@-ms-keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+}
+@keyframes animationName {
+  100% {
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@-moz-keyframes openRose4 {
+  100% {
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@-ms-keyframes openRose4 {
+  100% {
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@keyframes openRose4 {
+  100% {
+    -moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+}
+@keyframes animationName {
+  100% {
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+}
+@-moz-keyframes openRose5 {
+  100% {
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+}
+@-ms-keyframes openRose5 {
+  100% {
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+}
+@keyframes openRose5 {
+  100% {
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+
+/*NO FALL*/
+.rose-petals.fall > div:nth-child(1) {
+  -moz-animation: fallRose1 3s ease-in-out;
+  -webkit-animation: fallRose1 3s ease-in-out;
+  animation: fallRose1 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.rose-petals.fall > div:nth-child(2) {
+  -moz-animation: fallRose2 3s ease-in-out;
+  -webkit-animation: fallRose2 3s ease-in-out;
+  animation: fallRose2 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.rose-petals.fall > div:nth-child(3) {
+  -moz-animation: fallRose3 3s ease-in-out;
+  -webkit-animation: fallRose3 3s ease-in-out;
+  animation: fallRose3 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.rose-petals.fall > div:nth-child(4) {
+  -moz-animation: fallRose4 3s ease-in-out;
+  -webkit-animation: fallRose4 3s ease-in-out;
+  animation: fallRose4 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.rose-petals.fall > div:nth-child(5) {
+  -moz-animation: fallRose5 3s ease-in-out;
+  -webkit-animation: fallRose5 3s ease-in-out;
+  animation: fallRose5 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.rose-petals.fall > div:nth-child(6) {
+  -moz-animation: fallRose6 3s ease-in-out;
+  -webkit-animation: fallRose6 3s ease-in-out;
+  animation: fallRose6 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.rose-petals.fall > div:nth-child(7) {
+  -moz-animation: fallRose7 3s ease-in-out;
+  -webkit-animation: fallRose7 3s ease-in-out;
+  animation: fallRose7 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fallRose1 {
+  50% {
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    transform: rotate(-60deg);
+    top: 260px;
+    left: -30px;
+  }
+}
+
+@keyframes fallRose2 {
+  50% {
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    transform: rotate(-60deg);
+    top: 260px;
+    left: -30px;
+  }
+}
+
+@keyframes fallRose3 {
+  50% {
+    transform: rotate(90deg);
+    top: 80px;
+    left: -100px;
+  }
+  100% {
+    transform: rotate(60deg);
+    top: 260px;
+    left: 30px;
+  }
+}
+
+@keyframes fallRose4 {
+  50% {
+    transform: rotate(90deg);
+    top: 80px;
+    left: -100px;
+  }
+  100% {
+    transform: rotate(60deg);
+    top: 260px;
+    left: 100px;
+  }
+}
+
+@keyframes fallRose5 {
+  50% {
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    transform: rotate(-60deg);
+    top: 260px;
+    left: 30px;
+  }
+}
+
+@keyframes fallRose6 {
+  50% {
+    transform: rotate(90deg);
+    top: 80px;
+    left: -100px;
+  }
+  100% {
+    transform: rotate(60deg);
+    top: 260px;
+    left: 30px;
+  }
+}
+
+@keyframes fallRose7 {
+  50% {
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    transform: rotate(-60deg);
+    top: 260px;
+    left: -30px;
+  }
+}
+
+.emojis {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 2rem;
+  animation: fall 3.5s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      top: -10%;
+      opacity: 1;
+  }
+  100% {
+      top: 120%;
+      opacity: 0.2;
+  }
+}

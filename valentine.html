@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+
+    <div class="container">
+        <div class="thorns">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="rose-leaves">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="rose-petals">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="sparkles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="button-yes" role="button" onclick="openRose()">YES!</button>
+        <button class="button-no" role="button" onclick="fallRose()">no...</button>
+    </div>
+
+    <div class="emojis"></div>
+
+    <script>
+        function openRose() {
+            document.querySelector('.rose-petals').classList.add('open');
+            document.querySelector('h1').textContent = "YAAAAAYYYY!!! I LOVE YOU!!!!!";
+            document.querySelector('h1').style.color = 'rgb(223, 44, 112)';
+        }
+
+        function fallRose() {
+            document.querySelector('.rose-petals').classList.add('fall');
+            document.querySelector('.buttons').style.display = 'none';
+            document.querySelector('h1').innerHTML = "Let's try again, <span class='red-text'>shall we??</span>";
+            document.querySelector('.sparkles').style.display = 'none';
+            createFallingEmojis();
+
+            setTimeout(resetPage, 10000); // Reset page after 10 seconds
+        }
+
+        function createFallingEmojis() {
+            const emojiContainer = document.querySelector('.emojis');
+            for (let i = 0; i < 20; i++) {
+                const emoji = document.createElement('div');
+                emoji.classList.add('emoji');
+                emoji.textContent = '😭';
+                emoji.style.left = Math.random() * 100 + 'vw';
+                emoji.style.animationDelay = Math.random() * 2 + 's';
+                emojiContainer.appendChild(emoji);
+            }
+        }
+
+        function resetPage() {
+            document.querySelector('.rose-petals').classList.remove('fall');
+            document.querySelector('.buttons').style.display = 'flex';
+            document.querySelector('h1').textContent = "Will you be my Valentine?";
+            document.querySelector('h1').style.color = '#fff';
+            document.querySelector('.sparkles').style.display = 'block';
+            document.querySelector('.emojis').innerHTML = '';
+
+            // Change both buttons to "YES!"
+            const buttons = document.querySelectorAll('.buttons button');
+            buttons.forEach(button => {
+                button.textContent = 'YES!';
+                button.onclick = openRose;
+            });
+        }
+    </script>
+</body>
+</html>
