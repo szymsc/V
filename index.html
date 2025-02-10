@@ -57,8 +57,9 @@
         function openRose() {
             document.querySelector('.rose-petals').classList.add('open');
             document.querySelector('.buttons').style.display = 'none';
-            document.querySelector('h1').textContent = "YAAAAAYYYY!!! I LOVE YOU!!!!!";
+            document.querySelector('h1').textContent = "YAAAAAYYYY!!! \nI LOVE YOU!!!!!";
             document.querySelector('h1').style.color = 'rgb(223, 44, 112)';
+            createLoveEmojis();
         }
 
         function fallRose() {
@@ -66,12 +67,25 @@
             document.querySelector('.buttons').style.display = 'none';
             document.querySelector('h1').innerHTML = "Let's try again, <span class='red-text'>shall we??</span>";
             document.querySelector('.sparkles').style.display = 'none';
-            createFallingEmojis();
+            createCryingEmojis();
 
             setTimeout(resetPage, 10000); // Reset page after 10 seconds
         }
 
-        function createFallingEmojis() {
+        function createLoveEmojis() {
+            const emojiContainer = document.querySelector('.emojis');
+            for (let i = 0; i < 20; i++) {
+                const emoji = document.createElement('div');
+                emoji.classList.add('emoji');
+                emoji.textContent = '❤️';
+                emoji.style.left = Math.random() * 100 + 'vw';
+                emoji.style.animationDelay = Math.random() * 2 + 's';
+                emojiContainer.appendChild(emoji);
+            }
+        }
+
+
+        function createCryingEmojis() {
             const emojiContainer = document.querySelector('.emojis');
             for (let i = 0; i < 20; i++) {
                 const emoji = document.createElement('div');
